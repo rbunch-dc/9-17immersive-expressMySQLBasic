@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('#myTable').DataTable();
+		});		
+
+	</script>
+
+  </head>
+  <body>
+
+	<table id="myTable">
+		<thead>
+			<th>Customer Number</th>
+			<th>CUstomer Name</th>
+			<th>Customer Phone</th>
+		</thead>
+		<tbody>
+		<% results.map((row)=>{ %>
+			<tr>
+				<td><%=row.customerNumber%></td>
+				<td><%=row.customerName%></td>
+				<td><%=row.phone%></td>
+			</tr>
+		<% }); %>
+		</tbody>
+	</table>
+
+  </body>
+</html>
